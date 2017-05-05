@@ -27,12 +27,8 @@ def translate_to_morse(sentence):
 
 def translate_to_english(sentence):
     words = sentence.split('    ')
-    print('Words: ', words)
-    print(len(words))
-    for i in range(1, len(words) + 1, 2):
-        print(i)
+    for i in range(1, len(words) * 2, 2):
         words.insert(i, 'n_word')
-    print('Words after: ', words)
     n_sentence = []
     for word in words:
         word = word.split(' ')
@@ -41,9 +37,7 @@ def translate_to_english(sentence):
                 n_sentence.append('n_word')
             else:
                 n_sentence.append(code_to_en[letter])
-    print(n_sentence)
     n_sentence = ''.join(n_sentence).replace(' ', '')
-    print(n_sentence)
     n_sentence = n_sentence.replace('n_word', ' ')
     print(n_sentence)
 
